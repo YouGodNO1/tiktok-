@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as_ts
+import plotly.express as px
 import plotly.graph_objects as go
 
-st.set_page_config(page_title="TikTok Shop店铺数据看板", layout="page_width")
+st.set_page_config(page_title="TikTok Shop店铺数据看板", layout="wide")
 st.title("🏪 TikTok Shop 店铺数据罗盘分析")
 st.markdown("自动识别后台导出的【关键指标】报表，支持 xlsx / csv")
 
@@ -93,7 +93,7 @@ if upload_file:
 
     st.divider()
 
-    # ===== 每日GMV & 订单趋势 =====
+    # ===== 每日GMV & 订单 & 退款 趋势 =====
     st.subheader("📈 每日 GMV / 订单 / 退款 趋势")
     fig1 = go.Figure()
     fig1.add_trace(go.Bar(x=df["日期"], y=df["GMV"], name="GMV (£)", marker_color="#00c3ff"))
